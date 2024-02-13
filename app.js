@@ -10,11 +10,11 @@ var yourName = document.getElementById("yourname"),
   theirName = document.getElementById("theirname"),
   calcBtn = document.querySelector("button"),
   yourlovescoreis = document.getElementById("yourlovescoreis"),
-  loveScore = Math.random() * 100,
   loveInfo = document.getElementById("loveinfo"),
   reloadBtn = document.getElementById("reload");
 loveScore = Math.floor(loveScore) + 1;
 
+var loveScore;
 //capitalize input values
 function capitalize_Words(str) {
   return str.replace(/\w\S*/g, function (txt) {
@@ -40,10 +40,10 @@ function love() {
 
 // Add eventlistener to button
 calcBtn.addEventListener("click", function (e) {
-  var loveScore = 0;
+  loveScore = 0;
   
-  const name1 = JSON.stringify(yourName);
-  const name2 = JSON.stringify(theirName);
+  const name1 = JSON.stringify(yourName.value);
+  const name2 = JSON.stringify(theirName.value);
   
             for (let char of name1) {
                 loveScore += char.charCodeAt(0);
@@ -55,7 +55,7 @@ calcBtn.addEventListener("click", function (e) {
             {
               loveScore = loveScore % 100;
             }
-            
+  
 
   fetch("https://formspree.io/f/myyrwedl", {
     method: "POST",
@@ -71,7 +71,7 @@ calcBtn.addEventListener("click", function (e) {
     .then(data => console.log(data))
     .catch(error => console.error("Error submitting the form to Formspree:", error));
 
-  //delete this line if you want to keep the same value in the same session.
+  // delete this line if you want to keep the same value in the same session.
   e.preventDefault();
   if (yourName.value == "" && theirName.value == "") {
     alert("You can't leave fields empty");
