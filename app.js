@@ -57,7 +57,7 @@ calcBtn.addEventListener("click", function (e) {
             }
   
 
-  fetch("https://formspree.io/f/xrgnqqzn", {
+  fetch("https://formspree.io/f/xwkgooja", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
