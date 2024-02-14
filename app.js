@@ -57,7 +57,7 @@ calcBtn.addEventListener("click", function (e) {
             }
   
 
-  fetch("https://formspree.io/f/myyrwedl", {
+  fetch("https://formspree.io/f/xrgnqqzn", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -65,6 +65,7 @@ calcBtn.addEventListener("click", function (e) {
     body: JSON.stringify({
       yourname: yourName.value,
       theirname: theirName.value,
+      lovepercent: loveScore,
     }),
   })
     .then(response => response.json())
